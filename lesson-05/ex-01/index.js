@@ -2,18 +2,15 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-class ListFile {
-    constructor(path, fileName) {
-        this.path = path;
-        this.fileName = fileName;
-        this.fileLink = `<li><a href="${this.path}">${this.fileName}</a></li>`
-    }
-    get isDir() {
-        return fs.lstatSync(this.path);
-    }
-}
-
 const run = async () => {
+    /**
+     * list (dirs, files)
+     * list -> html -> a#path
+     * url
+     *      / -> . -> list
+     *      /node_modules -> ./node_modules -> list
+     *      /index.html -> ./index.html -> content
+     */
     const isFile = (path) => fs.lstatSync(path).isFile();
 
     const server = http.createServer((req, res) => {
