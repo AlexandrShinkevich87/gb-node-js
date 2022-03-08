@@ -1,0 +1,19 @@
+{
+  "name": "lesson-04",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cliapp.js",
+  "scripts": {
+    "dev": "node cliapp.js ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "reader": "cliapp.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "yargs": "^17.2.1"
+  }
+}
